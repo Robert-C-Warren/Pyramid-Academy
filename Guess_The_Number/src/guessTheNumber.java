@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,8 +13,18 @@ public class guessTheNumber {
 
         private static int guess() //Accepts user input guess
         {
+            boolean validGuess = false;
+            int guess = 0;
             Scanner input = new Scanner(System.in);
-            int guess = input.nextInt();
+            while (!validGuess) {
+                try {
+                    guess = input.nextInt();
+                    validGuess = true;
+                } catch (InputMismatchException e) {
+                    System.err.println("Enter an integer.");
+                    input.next();
+                }
+            }
             return guess;
         }
 
