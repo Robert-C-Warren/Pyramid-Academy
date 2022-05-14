@@ -11,7 +11,7 @@ public class guessTheNumber {
             return int_random;
         }
 
-        private static int guess() //Accepts user input guess
+        public static int guess() //Accepts user input guess
         {
             boolean validGuess = false;
             int guess = 0;
