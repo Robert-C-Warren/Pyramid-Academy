@@ -20,7 +20,7 @@ class LevelTextTest {
     @Test
     void levelTwo() {
         LevelText levelText = new LevelText();
-        levelText.levelTwo(1);
+        levelText.levelTwo(2);
     }
 
     @Test
