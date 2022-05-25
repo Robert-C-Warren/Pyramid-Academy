@@ -35,7 +35,7 @@ public class Main {
                 //Exception catching and to lower for capital entry
                 try {
                     guessLetter = guess.next().toLowerCase();
-                    mulitpleEntry(guessLetter);
+                    multipleEntry(guessLetter);
                 } catch (TooManyLetters ex) {
                     System.out.println(ex.getMessage());
                 }
@@ -61,7 +61,6 @@ public class Main {
                         //J sets switch case to print hangman
                         hangman.setFail(++j);
                         //Adds the wrong letter to the missed letters
-                        //missedCollection.append(guessLetter);
                         hangman.setMissed(String.valueOf(missedCollection.append(guessLetter)));
                         //Prints hangman
                         System.out.println(hangman.hangmanVisual(hangman.getFail()));
@@ -76,11 +75,19 @@ public class Main {
 
             //Asks for a new game
             do {
-                System.out.println("Yes! The secret word is '" + gameWord + "'! You have won!");
+                // If won
+                if (wordPrint.equals(gameWord)) {
+                    System.out.println("Yes! The secret word is '" + gameWord + "'! You have won!");
+                }
+                // If lost
+                else {
+                    System.out.println("Oh no! the secret word was '" + gameWord + "' You have lost.");
+                }
                 System.out.println("Would you like to play another game? (yes or no)");
                 //Catches any answer not: yes, y, no, n
                 try {
                     anotherRound = guess.next().toLowerCase();
+                    continueGame(anotherRound);
                 } catch (IllegalArgumentException ex) {
                     System.out.println(ex.getMessage());
                 }
@@ -102,7 +109,7 @@ public class Main {
         }
     }
 
-    public static void mulitpleEntry(String guessLetter) throws TooManyLetters {
+    public static void multipleEntry(String guessLetter) throws TooManyLetters {
         if (guessLetter.length() > 1) {
             throw new TooManyLetters("Only one letter is allowed at a time");
         }

@@ -75,7 +75,7 @@ public class HangmanVisual {
                         "  O |\n\n" +
                         " ||||\n\n" +
                         " / \\|\n\n" +
-                        "   ===\n") + ("You Lose");
+                        "   ===\n");
             }
             default: {
                 return null;
