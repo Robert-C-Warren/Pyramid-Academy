@@ -2,19 +2,10 @@ package Main;
 
 import Main.Inputs.Keyboard;
 import Main.Inputs.Mouse;
-import org.w3c.dom.ls.LSOutput;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
 
 public class Game extends JFrame implements Runnable {
     private GameScreen gameScreen;
-    private BufferedImage img;
     private Thread gameThread;
     private final double FPS_SET = 60.0;
     private final double UPS_SET = 60.0;
@@ -23,10 +14,9 @@ public class Game extends JFrame implements Runnable {
 
     public Game() {
         // Import Sprites
-        importImg();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        gameScreen = new GameScreen(img);
+        gameScreen = new GameScreen(this);
         add(gameScreen);
         pack(); // Adjusts Frame Size Through Layout Manager
         setVisible(true);
@@ -41,16 +31,7 @@ public class Game extends JFrame implements Runnable {
 
         requestFocus();
     }
-    // Import Images For Game
-    private void importImg() {
-        InputStream is = getClass().getResourceAsStream("/spriteatlas.png");
 
-        try {
-            img = ImageIO.read(is);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     // Main Game Thread
     void start(){
         gameThread = new Thread(this) {};
