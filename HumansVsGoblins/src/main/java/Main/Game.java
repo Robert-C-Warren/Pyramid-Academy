@@ -1,10 +1,13 @@
 package Main;
 
+import Main.Inputs.Keyboard;
+import Main.Inputs.Mouse;
 import org.w3c.dom.ls.LSOutput;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,17 +18,28 @@ public class Game extends JFrame implements Runnable {
     private Thread gameThread;
     private final double FPS_SET = 60.0;
     private final double UPS_SET = 60.0;
+    private Mouse mouse;
+    private Keyboard keyboard;
 
     public Game() {
         // Import Sprites
         importImg();
-        // Set Size Of Game Screen
-        setSize(640,640);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         gameScreen = new GameScreen(img);
         add(gameScreen);
+        pack(); // Adjusts Frame Size Through Layout Manager
         setVisible(true);
+    }
+    void initInputs() {
+        mouse = new Mouse();
+        keyboard = new Keyboard();
+
+        addMouseListener(mouse);
+        addMouseMotionListener(mouse);
+        addKeyListener(keyboard);
+
+        requestFocus();
     }
     // Import Images For Game
     private void importImg() {
@@ -58,17 +72,19 @@ public class Game extends JFrame implements Runnable {
         long lastFrame = System.nanoTime();
         long lastTimeCheck = System.currentTimeMillis();
         long lastUpdate = System.nanoTime();
+        long now;
         // Game Loop
         while (true) {
+            now = System.nanoTime();
         // Render
-            if (System.nanoTime() - lastFrame >= timePerFrame) {
-                repaint();
-                lastFrame = System.nanoTime();
+            if (now - lastFrame >= timePerFrame) {
+                repaint(); // Changes Sprites
+                lastFrame = now;
                 frames++;
             }
 
         // Update
-            if (System.nanoTime() - lastUpdate >= timePerUpdate) {
+            if (now - lastUpdate >= timePerUpdate) {
                 lastUpdate = System.nanoTime();
                 updates++;
             }

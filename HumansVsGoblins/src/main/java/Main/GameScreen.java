@@ -9,16 +9,25 @@ import java.util.Random;
 public class GameScreen extends JPanel {
     private Random random;
     private BufferedImage img;
-
+    private Dimension size;
     private ArrayList<BufferedImage> sprites = new ArrayList<>(); // Add Sprites To Array List For Easier Access
 
     public GameScreen(BufferedImage img) { // Loads Random Sprites
         this.img = img;
 
+        setPanelSize(); // Calls New Method To Set Size
+
         loadSprites();
 
         random = new Random();
 
+    }
+
+    private void setPanelSize() {// Sets Panel Size So Sprites Don't Appear Off Screen On Start
+        size = new Dimension(640, 640);
+        setMinimumSize(size);
+        setPreferredSize(size);
+        setMaximumSize(size);
     }
 
     private void loadSprites() { // Nested Loops To Fill The Entire Game Screen
