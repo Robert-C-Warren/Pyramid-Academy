@@ -6,11 +6,9 @@ import java.awt.*;
 public class GameScreen extends JPanel {
     private Game game;
     private Dimension size;
-    private Render render;
 
     public GameScreen(Game game) { // Loads Random Sprites
         this.game = game;
-        render = new Render(this);
 
         setPanelSize(); // Calls New Method To Set Size
 
@@ -28,6 +26,6 @@ public class GameScreen extends JPanel {
     public void paintComponent(Graphics g) { // Paints The Screen With Random Sprites
         super.paintComponent(g);
 
-        render.render(g);
+        game.getRender().render(g);
     }
 }
