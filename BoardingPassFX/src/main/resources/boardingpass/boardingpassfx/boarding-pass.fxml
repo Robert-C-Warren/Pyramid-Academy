@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="400.0" prefHeight="700.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boardingpass.boardingpassfx.BoardingController">
+   <children>
+      <Button fx:id="book" layoutX="161.0" layoutY="621.0" mnemonicParsing="false" onAction="#book" prefHeight="36.0" prefWidth="78.0" text="Book">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="name" alignment="CENTER" layoutX="102.0" layoutY="26.0" onAction="#book" prefHeight="37.0" prefWidth="195.0" promptText="Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="email" alignment="CENTER" layoutX="102.0" layoutY="77.0" prefHeight="38.0" prefWidth="195.0" promptText="Email">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="phoneNumber" alignment="CENTER" layoutX="102.0" layoutY="128.0" prefHeight="38.0" prefWidth="195.0" promptText="Phone Number">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="gender" layoutX="125.0" layoutY="181.0" prefHeight="38.0" prefWidth="150.0" promptText="Select Gender" />
+      <TextField fx:id="age" alignment="CENTER" layoutX="125.0" layoutY="235.0" prefHeight="37.0" prefWidth="150.0" promptText="Age">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <DatePicker fx:id="date" layoutX="102.0" layoutY="289.0" onAction="#getDate" prefHeight="38.0" prefWidth="195.0" promptText="Flight Date" />
+      <ComboBox fx:id="origin" layoutX="125.0" layoutY="341.0" prefHeight="38.0" prefWidth="150.0" promptText="Origin City" />
+      <ComboBox fx:id="destination" layoutX="124.0" layoutY="395.0" prefHeight="38.0" prefWidth="150.0" promptText="Destination City" />
+      <ComboBox fx:id="flightClass" layoutX="124.0" layoutY="450.0" prefHeight="38.0" prefWidth="150.0" promptText="Class" />
+      <ComboBox fx:id="seatPicker" layoutX="124.0" layoutY="505.0" prefHeight="38.0" prefWidth="150.0" promptText="Seat" />
+      <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="576.0" onMouseClicked="#book" prefHeight="18.0" prefWidth="293.0" textFill="RED" />
+   </children>
+</AnchorPane>
