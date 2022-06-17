@@ -25,6 +25,7 @@ public class Game extends JFrame implements Runnable {
         // Import Sprites
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        setResizable(false);
 
         initClasses();
 
