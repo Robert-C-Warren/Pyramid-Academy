@@ -9,12 +9,10 @@ import Scenes.Settings;
 import javax.swing.*;
 
 public class Game extends JFrame implements Runnable {
-    private GameScreen gameScreen;
+    public GameScreen gameScreen;
     private Thread gameThread;
     private final double FPS_SET = 60.0;
     private final double UPS_SET = 60.0;
-    private Mouse mouse;
-    private Keyboard keyboard;
     //Classes
     private Render render;
     private Menu menu;
@@ -22,13 +20,11 @@ public class Game extends JFrame implements Runnable {
     private Settings settings;
 
     public Game() {
+        initClasses();
         // Import Sprites
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
-
-        initClasses();
-
         add(gameScreen);
         pack(); // Adjusts Frame Size Through Layout Manager
         setVisible(true);
@@ -42,25 +38,16 @@ public class Game extends JFrame implements Runnable {
         settings = new Settings(this);
     }
 
-    void initInputs() {
-        mouse = new Mouse();
-        keyboard = new Keyboard();
-
-        addMouseListener(mouse);
-        addMouseMotionListener(mouse);
-        addKeyListener(keyboard);
-
-        requestFocus();
-    }
-
     // Main Game Thread
     void start(){
         gameThread = new Thread(this) {};
-
         gameThread.start();
     }
-
-
+    public static void main(String[] args) {
+        Game game = new Game();
+        game.gameScreen.initInputs();
+        game.start();
+    }
     @Override
     // Game
     public void run() {
