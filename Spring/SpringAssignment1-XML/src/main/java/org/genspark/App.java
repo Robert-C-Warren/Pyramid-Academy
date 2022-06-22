@@ -1,13 +1,14 @@
 package org.genspark;
 
-/**
- * Hello world!
- *
- */
-public class App 
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("Assignment1.xml");
+        Student obj = (Student) context.getBean("Student");
+        System.out.println(obj);
     }
 }
