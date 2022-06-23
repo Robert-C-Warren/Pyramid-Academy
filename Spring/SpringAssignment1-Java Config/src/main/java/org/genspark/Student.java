@@ -1,0 +1,29 @@
+package org.genspark;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Student extends Address implements StudentInfo {
+    private int id;
+    private String name;
+    private String ph;
+    Address add;
+
+    public Student() {
+        this.id = StudentInfo.id;
+        this.name = StudentInfo.name;
+        this.ph = StudentInfo.ph;
+        this.add = new Address();
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", ph='" + ph + '\'' +
+                ", add=" + add +
+                '}';
+    }
+}
