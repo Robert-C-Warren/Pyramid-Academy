@@ -6,4 +6,21 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
 
     <context:component-scan base-package="org.genspark"/>
+    <bean id="address" class="org.genspark.Address">
+        <property name="city" value="Los Angeles"/>
+        <property name="state" value="California"/>
+        <property name="country" value="United States"/>
+        <property name="zipcode" value="91214"/>
+    </bean>
+
+    <bean id="student" class="org.genspark.Student">
+        <property name="id" value="12352"/>
+        <property name="name" value="Robert"/>
+        <property name="ph" ref="phone"/>
+        <property name="add" ref="address"/>
+    </bean>
+
+    <bean id="phone" class="org.genspark.Phone">
+        <property name="mob" value="1112223333"/>
+    </bean>
 </beans>
