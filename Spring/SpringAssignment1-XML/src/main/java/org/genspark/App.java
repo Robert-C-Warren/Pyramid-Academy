@@ -9,6 +9,7 @@ public class App
     {
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("Assignment1.xml");
         Student obj = (Student) context.getBean("Student");
+
         System.out.println(obj);
     }
 }

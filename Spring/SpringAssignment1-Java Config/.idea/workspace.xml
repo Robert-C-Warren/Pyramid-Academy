@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b175ef4d-e9a9-45b0-a3f0-f10dd32a7bc0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../SpringAssignment1-XML/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringAssignment1-XML/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +36,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Pyramid-Academy/Spring/SpringAssignment1-Java Config",
+    "last_opened_file_path": "C:/SpringLesson/Spring-Boot-Demo/java_pojo_demo",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
