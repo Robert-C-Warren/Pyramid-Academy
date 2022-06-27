@@ -31,7 +31,7 @@ public class GameScreen extends JPanel {
     }
 
     private void setPanelSize() {// Sets Panel Size So Sprites Don't Appear Off Screen On Start
-        size = new Dimension(640, 640);
+        size = new Dimension(640, 740);
         setMinimumSize(size);
         setPreferredSize(size);
         setMaximumSize(size);

@@ -33,7 +33,7 @@ public class Menu extends GameScene implements SceneMethods{
         int y = 150;
         int yOffset = 100;
 
-        bPlaying = new MyButton("Play", x, y, w, w);
+        bPlaying = new MyButton("Play", x, y, w, h);
         bSettings = new MyButton("Settings", x, y + yOffset, w, h);
         bQuit = new MyButton("Quit", x, y + yOffset * 2, w, h);
     }
@@ -85,6 +85,11 @@ public class Menu extends GameScene implements SceneMethods{
     @Override
     public void mouseReleased(int x, int y) {
         resetButtons();
+    }
+
+    @Override
+    public void mouseDragged(int x, int y) {
+
     }
 
     private void resetButtons() {

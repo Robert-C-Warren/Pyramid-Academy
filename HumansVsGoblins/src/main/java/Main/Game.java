@@ -1,7 +1,5 @@
 package Main;
 
-import Main.Inputs.Keyboard;
-import Main.Inputs.Mouse;
 import Scenes.Menu;
 import Scenes.Playing;
 import Scenes.Settings;
