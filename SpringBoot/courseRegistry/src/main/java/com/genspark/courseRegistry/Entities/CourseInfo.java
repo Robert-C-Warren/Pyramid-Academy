@@ -44,4 +44,13 @@ public class CourseInfo {
     public void setInstructor(String instructor) {
         this.instructor = instructor;
     }
+
+    @Override
+    public String toString() {
+        return "CourseInfo{" +
+                "courseID=" + courseID +
+                ", courseName='" + courseName + '\'' +
+                ", instructor='" + instructor + '\'' +
+                '}';
+    }
 }
